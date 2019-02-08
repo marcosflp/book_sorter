@@ -17,66 +17,47 @@ A simple web application to sort books.
 
 ## How to configure and run the project
 
+Download the project
+```
+$ git clone https://github.com/marcosflp/book_sorter.git
+$ cd book_sorter
+```
+
+
+### 1. With Docker
+
+1. Install [Docker](https://docs.docker.com/install/)
+2. Install [Docker-compose](https://docs.docker.com/compose/install/)
+
+##### Building and running the project
+```
+$ docker-compose up --build
+or in a daemon mode
+$ docker-compose --build -d
+```
+
+##### Running the tests
+```
+$ docker-compose run django python manage.py test
+```
+
+
+### 2. With a virtualenv
+
 > Remember to create a new virtualenv first
 ```bash
-$ git clone git@github.com:marcosflp/book_sorter.git
-$ cd book_sorter
 $ pip install -r requirements.txt
-```
-
-
-#### Custom django settings
-
-You must create a settings.ini file at the root of the project. 
-To create this file, use the settings.ini.example template.
-
-```
-$ cp settings.ini.example settings.ini 
-```
-
-> You don't need to change the the settings to run the project.
-
-Default settings that you can change on the settings.ini file.
-```
-# Security
-DEBUG=True
-SECRET_KEY=4cn68iga94@**2x9vb1f*-104pe%%*-u-%%#%%1wh!r(+mjiza@y$
-
-# Database
-DATABASE_ENGINE=django.db.backends.postgresql_psycopg2
-DATABASE_HOST=localhost
-DATABASE_NAME=process_manager
-DATABASE_USER=
-DATABASE_PASSWORD=
-
-# Logging
-ENABLE_LOGGING=True
-
-# Debug Toolbar
-ENABLE_DEBUG_TOOLBAR=False
-```
-You can use these settings to configure different values to use in different
-environments.
-
-##### Running migration and create a superuser to access the system
-
-```bash
 $ python manage.py migrate
-$ python manage.py createsuperuser
-```
-
-#### Running the project
-
-```bash
 $ python manage.py runserver
 ```
 
 
-#### Running the tests
+##### Running the tests
 
 ```bash
 $ python manage.py test
 ```
+
 
 ## How to Use
 

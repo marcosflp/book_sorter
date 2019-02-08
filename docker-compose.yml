@@ -1,0 +1,12 @@
+version: '3'
+services:
+
+  django:
+    build: .
+    container_name: book_sorter
+    command: bash -c "./compose/django_start.sh"
+    expose:
+      - "8000"
+    ports:
+      - "8000:8000"
+    restart: always
